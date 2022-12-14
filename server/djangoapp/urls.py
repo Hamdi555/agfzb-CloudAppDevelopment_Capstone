@@ -10,7 +10,7 @@ urlpatterns = [
     # name the URL
 
     # path for about view
-
+    path(route='about', view=views.about, name='about'),
     # path for contact us view
 
     # path for registration
@@ -20,9 +20,11 @@ urlpatterns = [
     # path for logout
 
     path(route='', view=views.get_dealerships, name='index'),
+    
 
     # path for dealer reviews view
 
     # path for add a review view
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)\
+  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
